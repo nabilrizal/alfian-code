@@ -1,58 +1,47 @@
-<!DOCTYPE html>\r\n
+<!DOCTYPE html>
 <html lang="en">
-  \r\n
-  <head>
-    \r\n
-    <meta charset="UTF-8" />
-    \r\n
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    \r\n
-    <title>Thank You Message</title>
-    \r\n
-    <style>
-      \r\n
-              #thankYouMessage {\r\n
-                  display: none;\r\n
-                  margin-top: 20px;\r\n
-                  padding: 10px;\r\n
-                  border: 1px solid #ddd;\r\n
-                  background-color: #f9f9f9;\r\n
-              }\r\n
-    </style>
-    \r\n</head
-  >\r\n
-  <body>
-    \r\n
-    <h1>Ceritaku!</h1>
-    \r\n
-    <p>
-      <a href="#" onclick="showMessage(); return false;">Klik disini nggor</a>
-    </p>
-    \r\n
-    <div id="thankYouMessage"></div>
-    \r\n
-    <script>
-      \r\n
-              function showMessage() {\r\n
-                  const messageContainer = document.getElementById('thankYouMessage');\r\n
-                  messageContainer.style.display = 'block';\r\n
-                  const totalMessages = 100;\r\n
-                  const intervalTime = 300 * 1000 / totalMessages; // 300,000 ms divided by 100 messages\r\n
-                  let count = 0;\r\n
-                  const interval = setInterval(() => {\r\n
-                      if (count >= totalMessages) {\r\n
-                          clearInterval(interval);\r\n
-                          return;\r\n
-                      }\r\n
-                      const message = document.createElement('p');\r\n
-                      message.textContent = 'CEMAS KAU DEKK,GALERI DOKUMEN DOKUMEN AMAN(?) WKWKWK TENANGG AKU GAK JAHAT-JAHAT BANGET AHAHAHAHAHA. LAIN KALI JANGAN KEPO YAAA INI SEMENTARA TAK TAHAN DULU BUAT JAMINAN WKWK BABAY SELAMAT BERSENANG SENANG. INGET INI CUMAN SEMENTARA YANG PENTING DAPET AKSESNYA DULU WKWK. SAATNYA MEMASAK GUYSS';\r\n
-                      messageContainer.appendChild(message);\r\n
-                      count++;\r\n
-                  }, intervalTime);\r\n
-              }\r\n
-    </script>
-    \r\n
-  </body>
-  \r\n
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You Message</title>
+  <style>
+    #thankYouMessage {
+      display: none;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ceritaku!</h1>
+  <p><a href="#" onclick="showMessage(); return false;">Klik disini nggor</a></p>
+  <div id="thankYouMessage"></div>
+  <script>
+    function showMessage() {
+      const messageContainer = document.getElementById('thankYouMessage');
+      messageContainer.style.display = 'block';
+
+      // Store the long message in a variable for readability
+      const longMessage = 'CEMAS KAU DEKK,GALERI DOKUMEN DOKUMEN AMAN(?) WKWKWK TENANGG AKU GAK JAHAT-JAHAT BANGET AHAHAHAHAHA. LAIN KALI JANGAN KEPO YAAA INI SEMENTARA TAK TAHAN DULU BUAT JAMINAN WKWK BABAY SELAMAT BERSENANG SENANG. INGET INI CUMAN SEMENTARA YANG PENTING DAPET AKSESNYA DULU WKWK. SAATNYA MEMASAK GUYSS';
+
+      const totalMessages = 100;
+      const intervalTime = 300 * 1000 / totalMessages; // 300,000 ms divided by 100 messages
+      let count = 0;
+
+      const interval = setInterval(() => {
+        if (count >= totalMessages) {
+          clearInterval(interval);
+          return;
+        }
+
+        const message = document.createElement('p');
+        message.textContent = longMessage;  // Use the stored variable
+        messageContainer.appendChild(message);
+        count++;
+      }, intervalTime);
+    }
+  </script>
+</body>
 </html>
-\r\n
